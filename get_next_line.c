@@ -6,11 +6,12 @@
 /*   By: joleksia <joleksia@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 11:19:04 by joleksia          #+#    #+#             */
-/*   Updated: 2024/12/28 12:54:49 by joleksia         ###   ########.fr       */
+/*   Updated: 2024/12/29 11:46:21 by joleksia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <stddef.h>
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -45,7 +46,7 @@ char	*ft_strnjoin(char *s1, char *s2, size_t c)
 	return (str);
 }
 
-char	*ft_process_chunk(char *dst, char **fcptr)
+static char	*ft_process_chunk(char *dst, char **fcptr)
 {
 	char	*fcontent;
 
@@ -69,7 +70,7 @@ char	*ft_process_chunk(char *dst, char **fcptr)
 	return (dst);
 }
 
-size_t	ft_process_file(int fd, char **dst, char **fcptr)
+static size_t	ft_process_file(int fd, char **dst, char **fcptr)
 {
 	size_t		fbytes;
 	char		*fbuf;
